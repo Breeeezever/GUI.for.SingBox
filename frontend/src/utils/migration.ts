@@ -9,6 +9,18 @@ export const migrateProfiles = async (profiles: App.Profile[], save: () => Promi
         rule.enable = true
         needSync = true
       }
+      if (typeof rule.match_response === 'undefined') {
+        rule.match_response = ''
+        needSync = true
+      }
+      if (typeof rule.tag === 'undefined') {
+        rule.tag = ''
+        needSync = true
+      }
+      if ('strategy' in rule) {
+        delete rule.strategy
+        needSync = true
+      }
     })
     profile.route.rules.forEach((rule) => {
       if (typeof rule.enable === 'undefined') {
@@ -45,6 +57,13 @@ export const migrateProfiles = async (profiles: App.Profile[], save: () => Promi
     })
     if ('independent_cache' in profile.dns) {
       delete profile.dns.independent_cache
+      needSync = true
+    }
+    if (typeof profile.dns.optimistic === 'undefined') {
+      profile.dns.optimistic = {
+        enabled: false,
+        timeout: '3d',
+      }
       needSync = true
     }
     const store_rdrc = !!(profile.experimental.cache_file as any).store_rdrc
