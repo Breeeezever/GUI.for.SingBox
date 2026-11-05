@@ -548,6 +548,12 @@ export default {
     editRuleset: 'Edit Rules',
     addToProfile: 'Add to Profile',
     selectRuleType: 'Select Rule Type',
+    changes: {
+      title: 'Ruleset-Hub Changes',
+      added: 'Added',
+      removed: 'Removed',
+      updated: 'Updated',
+    },
   },
   plugin: {
     trigger: 'Trigger',
@@ -601,12 +607,21 @@ export default {
     update: 'Update List',
     checkForUpdates: 'Check for updates',
     updateSuccess: 'Plugin-Hub updated successfully',
+    hashMismatch:
+      'Plugin content verification failed. Please update the Plugin-Hub first; if it is already up to date, please try again later.',
     total: 'Number of plug-ins',
     removeConfiguration: 'Do you want to remove the plugin configuration?',
     testRun: 'TestRun',
     deprecated: 'Deprecated',
     newVersion: 'New',
     slogan: 'Make {0} work your way',
+    changes: {
+      title: 'Plugin-Hub Changes',
+      failed: 'Failed Sources',
+      added: 'Added',
+      removed: 'Removed',
+      updated: 'Updated',
+    },
     sourceConfig: {
       name: 'Plugin Source',
     },
@@ -621,6 +636,7 @@ export default {
     cron: 'Cron',
     notification: 'Task Completed Notification',
     cronTips: 'Seconds Minutes Hours "Day of month" Month "Day of week"',
+    validate: 'Validate',
     lastTime: 'Last Time',
     'update::subscription': 'update::subscription',
     'update::ruleset': 'update::ruleset',
